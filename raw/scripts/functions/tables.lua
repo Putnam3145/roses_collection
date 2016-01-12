@@ -486,7 +486,8 @@ function makeEntityTable(entity)
  end
  key = tostring(civid)
  entity = df.global.world.entities.all[civid]
-
+ if type(entity)=='number' then return end
+ 
  local persistTable = require 'persist-table'
  local key = tostring(entity.id)
  local entity = entity.entity_raw.code
